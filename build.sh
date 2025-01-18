@@ -51,7 +51,7 @@ print_usage() {
 	echo "Miscellaneous"
 	echo "  --resourcedir=dir: Set the resource directory, defaults to root for pandoc containers"
 	echo "  --gitversion: legacy flag, no effect (default starting with 0.9.0)"
-    echo "  --gitstatus: legacy flag, no effect (default starting with 0.9.0)"
+	echo "  --gitstatus: legacy flag, no effect (default starting with 0.9.0)"
 	echo "  --nogitversion: Do not use git to describe the generate document version and revision metadata."
 	echo "  --table_rules: legacy flag, no effect (default starting with 0.9.0)"
 	echo "  --plain_quotes: legacy flag, no effect (default starting with 0.9.0)"
@@ -660,6 +660,7 @@ do_latex() {
 		--metadata=titlepage-rule-height:0
 		--metadata=colorlinks:true
 		--metadata=contact:admin@trustedcomputinggroup.org
+		--citeproc
 		--from=${FROM}
 		${extra_pandoc_options}
 		--to=latex
