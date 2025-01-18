@@ -628,6 +628,7 @@ do_latex() {
 
 	# TODO: https://github.com/TrustedComputingGroup/pandoc/issues/164
 	# highlighting breaks diffing due to the \xxxxTok commands generated during highlighting being fragile.
+	# Citations: https://pandoc.org/MANUAL.html#other-relevant-metadata-fields
 	echo "Generating LaTeX Output"
 	local start=$(date +%s)
 	local cmd=(pandoc
@@ -654,6 +655,8 @@ do_latex() {
 		--metadata=date-english:"'${DATE_ENGLISH}'"
 		--metadata=year:"'${YEAR}'"
 		--metadata=titlepage:true
+		--metadata=link-citations
+		--metadata=link-bibliography
 		--metadata=titlepage-background:/resources/img/cover.png
 		--metadata=crossrefYaml:/resources/filters/pandoc-crossref.yaml
 		--metadata=logo:/resources/img/tcg.png
