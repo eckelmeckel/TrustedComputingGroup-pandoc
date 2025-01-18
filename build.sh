@@ -644,6 +644,7 @@ do_latex() {
 		--lua-filter=landscape-pages.lua
 		--lua-filter=style-fenced-divs.lua
 		--filter=pandoc-crossref
+		--citeproc
 		--lua-filter=tabularx.lua
 		--lua-filter=divide-code-blocks.lua
 		--resource-path=.:/resources
@@ -663,7 +664,6 @@ do_latex() {
 		--metadata=titlepage-rule-height:0
 		--metadata=colorlinks:true
 		--metadata=contact:admin@trustedcomputinggroup.org
-		--citeproc
 		--from=${FROM}
 		${extra_pandoc_options}
 		--to=latex
